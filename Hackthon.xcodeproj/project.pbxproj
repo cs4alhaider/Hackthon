@@ -90,6 +90,7 @@
 		52C2685B5FA96D5F65BEBCEC /* Pods_HackthonUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 524B452F353E33327EAD7905 /* Pods_HackthonUITests.framework */; };
 		57323D1CFF5676F307AA3DD6 /* Pods_HackthonTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D8081A8BFC6B875B031CB2A /* Pods_HackthonTests.framework */; };
 		777458E0AD3481E454CC9A12 /* Pods_Hackthon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C6741558B008D5430541D1 /* Pods_Hackthon.framework */; };
+		CA88FFD621138AC2004CC1BC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA88FFD521138AC2004CC1BC /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -201,6 +202,8 @@
 		A5D08B3266FF735A1E74C9B6 /* Pods-Hackthon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hackthon.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hackthon/Pods-Hackthon.release.xcconfig"; sourceTree = "<group>"; };
 		AD4F0003717B988EC48992F2 /* Pods-HackthonUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackthonUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HackthonUITests/Pods-HackthonUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C261CA1636F6F24048A294FB /* Pods-HackthonUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackthonUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HackthonUITests/Pods-HackthonUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CA88FFD521138AC2004CC1BC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		CA88FFD82113B188004CC1BC /* Hackthon.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Hackthon.entitlements; sourceTree = "<group>"; };
 		D5C6741558B008D5430541D1 /* Pods_Hackthon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hackthon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5D3E6379CA99765938576FF /* Pods-HackthonTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackthonTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HackthonTests/Pods-HackthonTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -271,6 +274,7 @@
 		1AD97DDF21121A6D0014937A /* Hackthon */ = {
 			isa = PBXGroup;
 			children = (
+				CA88FFD82113B188004CC1BC /* Hackthon.entitlements */,
 				1AD97E2521121B670014937A /* SupportingFiles */,
 				1AD97EAC211350A10014937A /* Hajj */,
 				1AD97E9F21123C050014937A /* Orgnaization */,
@@ -444,6 +448,7 @@
 				CA78177921135842007E5D51 /* Hajj Controller */,
 				CA78177A21135857007E5D51 /* ImportentDates Controller */,
 				CA78177B2113586C007E5D51 /* GetHelp Controller */,
+				CA88FFD721138AC9004CC1BC /* Profile */,
 			);
 			path = Hajj;
 			sourceTree = "<group>";
@@ -477,8 +482,8 @@
 		CA78177A21135857007E5D51 /* ImportentDates Controller */ = {
 			isa = PBXGroup;
 			children = (
-				1AD97EAE211350A10014937A /* ImportantDatesTableViewCell.swift */,
 				1AD97EB3211350A10014937A /* ImportantDatesViewController.swift */,
+				1AD97EAE211350A10014937A /* ImportantDatesTableViewCell.swift */,
 			);
 			path = "ImportentDates Controller";
 			sourceTree = "<group>";
@@ -490,6 +495,14 @@
 				1AD97EB4211350A10014937A /* HelpTableViewCell.swift */,
 			);
 			path = "GetHelp Controller";
+			sourceTree = "<group>";
+		};
+		CA88FFD721138AC9004CC1BC /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				CA88FFD521138AC2004CC1BC /* ProfileViewController.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -564,6 +577,14 @@
 				TargetAttributes = {
 					1AD97DDC21121A6D0014937A = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					1AD97DF021121A6E0014937A = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -774,6 +795,7 @@
 				1AD97EBB211350A10014937A /* ImportantDatesViewController.swift in Sources */,
 				1AD97EB9211350A10014937A /* Dates.swift in Sources */,
 				1AD97EAB2112A3720014937A /* MainRequest.swift in Sources */,
+				CA88FFD621138AC2004CC1BC /* ProfileViewController.swift in Sources */,
 				1AD97E9C21122B7B0014937A /* Config.swift in Sources */,
 				1AD97EB5211350A10014937A /* HelpViewController.swift in Sources */,
 				1AD97EA821128C830014937A /* InfoViewController.swift in Sources */,
@@ -964,6 +986,7 @@
 			baseConfigurationReference = 42F3D5AE29D09399943174BC /* Pods-Hackthon.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Hackthon/Hackthon.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F3NN53B452;
@@ -973,7 +996,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Alsharif.com.Hackthon;
+				PRODUCT_BUNDLE_IDENTIFIER = net.alhaider.hackthonIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -986,6 +1009,7 @@
 			baseConfigurationReference = A5D08B3266FF735A1E74C9B6 /* Pods-Hackthon.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Hackthon/Hackthon.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F3NN53B452;
@@ -995,7 +1019,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Alsharif.com.Hackthon;
+				PRODUCT_BUNDLE_IDENTIFIER = net.alhaider.hackthonIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;

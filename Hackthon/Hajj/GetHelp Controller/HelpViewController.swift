@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Helper4Swift
+
 
 class HelpViewController: UIViewController {
 
@@ -14,6 +16,8 @@ class HelpViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     fileprivate let cellID = "HelpCell"
+    fileprivate let helpArray = ["استشارة طبية","الامن","الاسعاف","الدفاع المدني"]
+    fileprivate let helpNumbers = ["937","911","997","998"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +27,8 @@ class HelpViewController: UIViewController {
     fileprivate func setup() {
         tableView.delegate = self
         tableView.dataSource = self
-        backView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        tableView.isScrollEnabled = false
+        backView.clipsToBounds = true
         backView.layer.cornerRadius = 30
     }
     
@@ -39,16 +44,22 @@ class HelpViewController: UIViewController {
     }
     
     
-    
-    
-    
 }
 extension HelpViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return helpArray.count
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let phoneNumber = helpNumbers[indexPath.row]
+        Helper4Swift.shakePhone(style: .medium)
+        if let url = URL(string: "tel://\(phoneNumber)"), UIApplication.shared.canOpenURL(url) {
+            if #available(iOS 10, *) {
+                UIApplication.shared.open(url)
+            } else {
+                UIApplication.shared.openURL(url)
+            }
+        }
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
@@ -59,8 +70,8 @@ extension HelpViewController: UITableViewDelegate {
 
 extension HelpViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as? ImportantDatesTableViewCell else { return UITableViewCell()}
-        cell.titleLabel.text = "Get Help"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as? HelpTableViewCell else { return UITableViewCell()}
+        cell.titleLabel.text = helpArray[indexPath.row]
         return cell
     }
 }

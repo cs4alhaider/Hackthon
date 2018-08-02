@@ -13,6 +13,8 @@ import Helper4Swift
 class HajjViewController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var dismissButton: UIButton!
+    @IBOutlet weak var borderLineView: UIView!
     @IBOutlet weak var profileButton: UIButton!
     @IBOutlet weak var exitButton: UIButton!
     @IBOutlet weak var backgroundView: UIView!
@@ -35,7 +37,14 @@ class HajjViewController: UIViewController {
         super.viewDidAppear(animated)
     }
     
+    @IBAction func dismissButtonPresed(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func profileButtonPresed(_ sender: UIButton) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Hajj", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
+        self.present(newViewController, animated: true, completion: nil)
     }
      
     @IBAction func WhereAmIPreesed(_ sender: UIButton) {
@@ -145,18 +154,25 @@ class HajjViewController: UIViewController {
         
         mapView.delegate = self 
         
+        dismissButton.applyButtonDesign(title: "العودة", titleColor: .black, cornerRadius: 5, backgroundColor: .grayColor, shadowColor: .black, shadowRadius: 4, shadowOpacity: 0.3)
+        
         profileButton.setImage("profile".asImage, for: .normal)
         profileButton.setTitle("", for: .normal)
         profileButton.imageView?.contentMode = .scaleAspectFit
+        profileButton.imageView?.image = profileButton.imageView?.image?.withRenderingMode(.alwaysTemplate)
+        profileButton.imageView?.tintColor = .mainColor
         profileButton.imageView?.layer.cornerRadius = profileButton.frame.size.height / 2
-        profileButton.layer.cornerRadius = profileButton.frame.size.height / 2
-        profileButton.layer.borderWidth = 1
-        profileButton.layer.borderColor = UIColor.mainColor.cgColor
+        profileButton.layer.borderWidth = 1.5
+        profileButton.layer.borderColor = UIColor.grayColor.cgColor
+        profileButton.applyViewDesign(masksToBounds: false, shadowColor: .black, cornerRadius: profileButton.frame.size.height / 2, shadowOpacity: 0.3, shadowOffset: CGSize(width: 0, height: 0), shadowRadius: 10)
+        profileButton.backgroundColor = .grayColor
         
         exitButton.isHidden = true
         exitButton.setImage("exit".asImage, for: .normal)
         exitButton.imageView?.contentMode = .scaleAspectFit
         exitButton.alpha = 0
+        
+        borderLineView.applyViewDesign(masksToBounds: false, shadowColor: .black, cornerRadius: 10, shadowOpacity: 1, shadowOffset: CGSize(width: 0, height: 0), shadowRadius: 10)
         
         whereAmIButton.backgroundColor = .grayColor
         importantDatesButton.backgroundColor = .grayColor

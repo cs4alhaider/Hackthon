@@ -11,16 +11,12 @@ import UIKit
 class HelpTableViewCell: UITableViewCell {
 
     @IBOutlet weak var backView: UIView!
-    @IBOutlet weak var titleLabel: UIView!
+    @IBOutlet weak var titleLabel: UILabel!
+    
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        cus()
-    }
-
-    fileprivate func cus(){
-        backView.applyViewDesign(masksToBounds: false, shadowColor: .darkGray, cornerRadius: 10, shadowOpacity: 0.3, shadowOffset: CGSize(width: 0, height: 0), shadowRadius: 5)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
