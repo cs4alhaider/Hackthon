@@ -989,7 +989,7 @@
 				CODE_SIGN_ENTITLEMENTS = Hackthon/Hackthon.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F3NN53B452;
+				DEVELOPMENT_TEAM = G69L3HCQBT;
 				INFOPLIST_FILE = Hackthon/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1012,7 +1012,7 @@
 				CODE_SIGN_ENTITLEMENTS = Hackthon/Hackthon.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F3NN53B452;
+				DEVELOPMENT_TEAM = G69L3HCQBT;
 				INFOPLIST_FILE = Hackthon/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
