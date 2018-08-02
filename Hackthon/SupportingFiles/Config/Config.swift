@@ -12,6 +12,7 @@ import MapKit
 import SwiftMessages
 import Helper4Swift
 
+typealias JSONDictionary = [String: Any]
 
 let postColorsArray = [
     UIColor(red: 252/255, green: 209/255, blue: 6/255, alpha: 1.0),  // THIS MAIN APP'S COLOR

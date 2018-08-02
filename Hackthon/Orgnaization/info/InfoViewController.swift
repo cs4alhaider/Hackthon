@@ -16,6 +16,7 @@ class InfoTableViewCell: UITableViewCell {
 class InfoViewController: UIViewController {
 
     @IBOutlet weak var tablwView: UITableView!
+    @IBOutlet weak var currentView: UIView!
     
     var tickets: [String] = ["حاج مفقود","حاج يحتاج الاسعاف","طلب الامن"]
     var initialTouchPoint: CGPoint = CGPoint(x: 0,y: 0)
@@ -36,8 +37,8 @@ class InfoViewController: UIViewController {
         super.viewDidLoad()
         self.indicator.startAnimating()
         self.tablwView.reloadData()
-        tablwView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
-        tablwView.layer.cornerRadius = 30
+        self.currentView.clipsToBounds = true
+        currentView.layer.cornerRadius = 15
         self.indicator.stopAnimating()
         self.indicator.hidesWhenStopped = true
         
@@ -45,6 +46,7 @@ class InfoViewController: UIViewController {
         view.addGestureRecognizer(panGestureRecognizer!)
     }
     
+
     @objc func panGestureAction(_ panGesture: UIPanGestureRecognizer) {
         let translation = panGesture.translation(in: view)
         
@@ -100,6 +102,10 @@ extension InfoViewController: UITableViewDelegate,UITableViewDataSource {
             }
         return UITableViewCell()
         }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
     
 }
 
