@@ -46,13 +46,21 @@ class ViewController: UIViewController {
         self.present(nextVC, animated: true, completion: nil)
     }
     @IBAction func hajjManagmentAction(_ sender: Any) {
-        let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "QRViewController") as! QRViewController
-        nextVC.nextView = "view2"
+//        let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "QRViewController") as! QRViewController
+//        nextVC.nextView = "view2"
+//        self.present(nextVC, animated: true, completion: nil)
+        
+        let storyboad = UIStoryboard(name: "HajjManagment", bundle: nil)
+        let nextVC = storyboad.instantiateViewController(withIdentifier: "HajjMangViewController") as! HajjMangViewController
         self.present(nextVC, animated: true, completion: nil)
     }
     @IBAction func hajjAdminAction(_ sender: Any) {
-        let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "QRViewController") as! QRViewController
-        nextVC.nextView = "view3"
+//        let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "QRViewController") as! QRViewController
+//        nextVC.nextView = "view3"
+//        self.present(nextVC, animated: true, completion: nil)
+        let storyboad = UIStoryboard(name: "Orgnaization", bundle: nil)
+        let nextVC = storyboad.instantiateViewController(withIdentifier: "OrgnaizerMainViewController") as! OrgnaizerMainViewController
+     
         self.present(nextVC, animated: true, completion: nil)
     }
     
