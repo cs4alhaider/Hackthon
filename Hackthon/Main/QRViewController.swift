@@ -49,7 +49,7 @@ class QRViewController: UIViewController, QRCodeReaderViewControllerDelegate {
         
         // Or by using the closure pattern
         readerVC.completionBlock = { (result: QRCodeReaderResult?) in
-            print(result)
+            print(result ?? "")
             let generateHamalhURL = URL(string: "\(baseurl)/generate-hamlat-account")
         }
         

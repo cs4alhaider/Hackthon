@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 import MapKit
 import SwiftMessages
+import Helper4Swift
+
 
 let postColorsArray = [
     UIColor(red: 252/255, green: 209/255, blue: 6/255, alpha: 1.0),  // THIS MAIN APP'S COLOR
@@ -23,10 +25,13 @@ let postColorsArray = [
     UIColor(red: 250.0/255.0, green: 110.0/255.0, blue: 82.0/255.0, alpha: 1.0),
     UIColor(red: 130.0/255.0, green: 202.0/255.0, blue: 156.0/255.0, alpha: 1.0),
 ]
+
 // HUD View
 let hudView = UIView(frame: CGRect(x: 0, y: 0, width: 80, height: 80))
 let indicatorView = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 80, height: 80))
 let APP_NAME = "Hajj"
+
+
 extension UIColor {
     static var mainColor: UIColor {
         return UIColor(red:0.15, green:0.67, blue:0.53, alpha:1.0)
@@ -36,6 +41,7 @@ extension UIColor {
         return UIColor(red:0.94, green:0.94, blue:0.94, alpha:1.0)
     }
 }
+
 extension UIViewController {
     func showHUD() {
         hudView.center = CGPoint(x: view.frame.size.width/2, y: view.frame.size.height/2)
@@ -56,9 +62,11 @@ extension UIViewController {
     func hideHUD() { hudView.removeFromSuperview() }
     
     func simpleAlert(_ mess: String) {
-        let alert = UIAlertView(title: APP_NAME, message: mess, delegate: nil, cancelButtonTitle: "OK")
-        alert.show()
+//        let alert = UIAlertView(title: APP_NAME, message: mess, delegate: nil, cancelButtonTitle: "OK")
+//        alert.show()
+        Helper4Swift.showBasicAlert(title: APP_NAME, message: mess, buttonTitle: "OK", vc: self)
     }
+    
     typealias CompletionHandler = (_ success:Bool) -> Void
     
     func alert(_ mess: String){
@@ -90,6 +98,7 @@ extension UIViewController {
     }
     
 }
+
 extension MKMapView {
     
     // delta is the zoom factor

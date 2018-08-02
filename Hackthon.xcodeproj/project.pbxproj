@@ -304,8 +304,8 @@
 			isa = PBXGroup;
 			children = (
 				1AD97E1821121AD50014937A /* SupportingFiles */,
-				1AD97E1121121AB20014937A /* ViewController.swift */,
 				1AD97E1221121AB20014937A /* Main.storyboard */,
+				1AD97E1121121AB20014937A /* ViewController.swift */,
 				1AD97E1421121AB20014937A /* QRViewController.swift */,
 			);
 			path = Main;
@@ -323,8 +323,8 @@
 		1AD97E1E21121B0A0014937A /* HajjManagment */ = {
 			isa = PBXGroup;
 			children = (
-				1AD97E1F21121B0A0014937A /* HajjMangViewController.swift */,
 				1AD97E2021121B0A0014937A /* HajjManagment.storyboard */,
+				1AD97E1F21121B0A0014937A /* HajjMangViewController.swift */,
 			);
 			path = HajjManagment;
 			sourceTree = "<group>";
@@ -332,6 +332,7 @@
 		1AD97E2521121B670014937A /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				CA781778211355D5007E5D51 /* Models */,
 				1AD97EA92112A35A0014937A /* Request */,
 				1AD97E9A21122B7B0014937A /* Config */,
 				1AD97E2B21121D110014937A /* HelpMac-Font */,
@@ -405,6 +406,7 @@
 			isa = PBXGroup;
 			children = (
 				1AD97E9B21122B7B0014937A /* Config.swift */,
+				1AD97EB0211350A10014937A /* Extensions.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -438,14 +440,10 @@
 		1AD97EAC211350A10014937A /* Hajj */ = {
 			isa = PBXGroup;
 			children = (
-				1AD97EAD211350A10014937A /* HelpViewController.swift */,
-				1AD97EAE211350A10014937A /* ImportantDatesTableViewCell.swift */,
 				1AD97EAF211350A10014937A /* Hajj.storyboard */,
-				1AD97EB0211350A10014937A /* Extensions.swift */,
-				1AD97EB1211350A10014937A /* Dates.swift */,
-				1AD97EB2211350A10014937A /* HajjViewController.swift */,
-				1AD97EB3211350A10014937A /* ImportantDatesViewController.swift */,
-				1AD97EB4211350A10014937A /* HelpTableViewCell.swift */,
+				CA78177921135842007E5D51 /* Hajj Controller */,
+				CA78177A21135857007E5D51 /* ImportentDates Controller */,
+				CA78177B2113586C007E5D51 /* GetHelp Controller */,
 			);
 			path = Hajj;
 			sourceTree = "<group>";
@@ -458,6 +456,40 @@
 				524B452F353E33327EAD7905 /* Pods_HackthonUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CA781778211355D5007E5D51 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1AD97EB1211350A10014937A /* Dates.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CA78177921135842007E5D51 /* Hajj Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1AD97EB2211350A10014937A /* HajjViewController.swift */,
+			);
+			path = "Hajj Controller";
+			sourceTree = "<group>";
+		};
+		CA78177A21135857007E5D51 /* ImportentDates Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1AD97EAE211350A10014937A /* ImportantDatesTableViewCell.swift */,
+				1AD97EB3211350A10014937A /* ImportantDatesViewController.swift */,
+			);
+			path = "ImportentDates Controller";
+			sourceTree = "<group>";
+		};
+		CA78177B2113586C007E5D51 /* GetHelp Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1AD97EAD211350A10014937A /* HelpViewController.swift */,
+				1AD97EB4211350A10014937A /* HelpTableViewCell.swift */,
+			);
+			path = "GetHelp Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

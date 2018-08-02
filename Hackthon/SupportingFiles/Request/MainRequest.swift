@@ -12,10 +12,9 @@ import Alamofire
 
 
 class Request {
-    static let system = Request()
     
+    static let system = Request()
     typealias JSONDictionary = [String: Any]
-
     typealias QueryResult = (JSONDictionary) -> ()
 
     func request(url: String ,method: HTTPMethod, params: [String:String]?, headers: HTTPHeaders?, completion: @escaping QueryResult) {
@@ -24,6 +23,7 @@ class Request {
             .responseJSON { response in
                 
                 switch(response.result) {
+                    
                 case .success(_):
                     if response.result.value != nil{
                         let dict = response.result.value as! JSONDictionary
