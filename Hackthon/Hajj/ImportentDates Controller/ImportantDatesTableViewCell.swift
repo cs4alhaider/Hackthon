@@ -24,7 +24,7 @@ class ImportantDatesTableViewCell: UITableViewCell {
     }
     
     fileprivate func cus(){
-        backView.applyViewDesign(masksToBounds: false, shadowColor: .darkGray, cornerRadius: 10, shadowOpacity: 0.3, shadowOffset: CGSize(width: 0, height: 0), shadowRadius: 5)
+        backView.applyViewDesign(masksToBounds: false, shadowColor: .darkGray, cornerRadius: 10, shadowOpacity: 0.2, shadowOffset: CGSize(width: 0, height: 0), shadowRadius: 9)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

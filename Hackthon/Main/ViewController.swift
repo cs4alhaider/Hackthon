@@ -41,7 +41,8 @@ class ViewController: UIViewController {
     }
 
     @IBAction func hajjAction(_ sender: Any) {
-        let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "QRViewController") as! QRViewController
+        let storyboad = UIStoryboard(name: "Hajj", bundle: nil)
+        let nextVC = storyboad.instantiateViewController(withIdentifier: "HajjViewController") as! HajjViewController
         self.present(nextVC, animated: true, completion: nil)
     }
     @IBAction func hajjManagmentAction(_ sender: Any) {
