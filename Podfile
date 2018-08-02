@@ -11,7 +11,7 @@ pod 'QRCodeReader.swift', '~> 8.2.0'
 pod 'Alamofire', '~> 4.7'
 pod 'Helper4Swift'
 pod 'SwiftMessages'
-
+pod 'Firebase/Core'
 
   target 'HackthonTests' do
     inherit! :search_paths

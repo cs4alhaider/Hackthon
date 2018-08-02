@@ -91,6 +91,7 @@
 		57323D1CFF5676F307AA3DD6 /* Pods_HackthonTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D8081A8BFC6B875B031CB2A /* Pods_HackthonTests.framework */; };
 		777458E0AD3481E454CC9A12 /* Pods_Hackthon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C6741558B008D5430541D1 /* Pods_Hackthon.framework */; };
 		CA88FFD621138AC2004CC1BC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA88FFD521138AC2004CC1BC /* ProfileViewController.swift */; };
+		CA88FFDA2113C360004CC1BC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA88FFD92113C360004CC1BC /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -204,6 +205,7 @@
 		C261CA1636F6F24048A294FB /* Pods-HackthonUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackthonUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HackthonUITests/Pods-HackthonUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CA88FFD521138AC2004CC1BC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		CA88FFD82113B188004CC1BC /* Hackthon.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Hackthon.entitlements; sourceTree = "<group>"; };
+		CA88FFD92113C360004CC1BC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D5C6741558B008D5430541D1 /* Pods_Hackthon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hackthon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5D3E6379CA99765938576FF /* Pods-HackthonTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackthonTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HackthonTests/Pods-HackthonTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -283,6 +285,7 @@
 				1AD97DE921121A6E0014937A /* LaunchScreen.storyboard */,
 				1AD97E9D21122FD60014937A /* Info.plist */,
 				1AD97E0E21121AA10014937A /* Assets.xcassets */,
+				CA88FFD92113C360004CC1BC /* GoogleService-Info.plist */,
 			);
 			path = Hackthon;
 			sourceTree = "<group>";
@@ -646,6 +649,7 @@
 				1AD97E8521121D120014937A /* 32.ttf in Resources */,
 				1AD97E7921121D120014937A /* 23.ttf in Resources */,
 				1AD97E9521121D120014937A /* 48.ttf in Resources */,
+				CA88FFDA2113C360004CC1BC /* GoogleService-Info.plist in Resources */,
 				1AD97E7A21121D120014937A /* 22.ttf in Resources */,
 				1AD97E6921121D120014937A /* 43.ttf in Resources */,
 				1AD97E7321121D120014937A /* 51.ttf in Resources */,
@@ -766,16 +770,20 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Hackthon/Pods-Hackthon-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Helper4Swift/Helper4Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/QRCodeReader.swift/QRCodeReader.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Helper4Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCodeReader.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
