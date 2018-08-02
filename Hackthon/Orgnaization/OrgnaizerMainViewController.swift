@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import UserNotifications
+import Alamofire
 class OrgnaizerMainViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDelegate {
 
     @IBOutlet weak var statusStackView: UIStackView!
@@ -25,16 +26,49 @@ class OrgnaizerMainViewController: UIViewController,CLLocationManagerDelegate,MK
     
     var location: CLLocation?
     let locationManager = CLLocationManager()
+    
+    struct coordinatesArray {
+        let lat: Double
+        let long: Double
+    }
+    var coordinates: [coordinatesArray] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.mapView.delegate = self
         locationManager.delegate = self
+        getRandom()
+
         if CLLocationManager.locationServicesEnabled() {
             locationManager.requestWhenInUseAuthorization()
             locationManager.startUpdatingLocation()
         }
         setupLayer()
+    }
+    
+    
+    func getRandom() {
+        let randomURL = "https://flextubeapp.com/create-random-point/21.4238390/39.8223072/0.5/100"
+        Request.system.request(url: randomURL, method: .get, params: nil, headers: nil) { (result) in
+            if let results = result as? JSONDictionary {
+                let coordinates = results["results"] as! [JSONDictionary]
+                for i in coordinates {
+                    
+                    self.coordinates.append(coordinatesArray(lat: i["new_latitude"] as! Double, long: i["new_longitude"] as! Double))
+
+                }
+                for points in self.coordinates {
+                    let annotation = MKPointAnnotation()
+                    annotation.title = "Hujjaj"
+                    annotation.coordinate = CLLocationCoordinate2D(latitude: points.lat, longitude: points.long)
+                    self.mapView.showAnnotations([annotation], animated: true)
+                    
+                }
+               // self.mapView.setZoomByDelta(delta: 1.4, animated: true)
+                
+                
+            }
+        }
     }
 
     func setupLayer(){
@@ -49,6 +83,23 @@ class OrgnaizerMainViewController: UIViewController,CLLocationManagerDelegate,MK
         self.mapView.layer.addSublayer(gradientLayer)
         addRadiusCircle(location: CLLocation(latitude: self.mapView.userLocation.coordinate.longitude , longitude: self.mapView.userLocation.coordinate.latitude ))
         NotificationCenter.default.addObserver(self, selector: #selector(getStatusViewBack), name: NSNotification.Name(rawValue: "showBackgroundView"), object: nil)
+//        var points = [ ["title":"",
+//                      "latitude": Double(),
+//                      "longitude": Double()
+//            ]] as [[String : Any]]
+//
+//        for number in 1...30 {
+//            let hajjID = number.description
+//            var index = 1.0
+//            var lat = Double(21.424662)
+//            lat = lat + index
+//            var long = Double(39.8223072)
+//            long = long + index
+//            points.append(["title": "\(hajjID) حاج",  "latitude": lat , "longitude": long])
+//            index = index + 1
+//
+//        }
+
 
     }
     override func didReceiveMemoryWarning() {

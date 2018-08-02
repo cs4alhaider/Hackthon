@@ -22,6 +22,12 @@ class HajjMangViewController: UIViewController, CLLocationManagerDelegate, MKMap
     var points: [CLLocationCoordinate2D] = [CLLocationCoordinate2D]()
     let annotation = MKPointAnnotation()
     
+    struct coordinatesArray {
+        let lat: Double
+        let long: Double
+    }
+    var coordinates: [coordinatesArray] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.mapView.delegate = self
@@ -75,21 +81,33 @@ class HajjMangViewController: UIViewController, CLLocationManagerDelegate, MKMap
         self.orgnaizationsOutlet.setTitleColor(UIColor.black, for: .normal)
         self.checkPointerOutlet.setTitleColor(UIColor.white, for: .normal)
         
-        let points = [
-            ["title": "افواج",     "latitude": 21.4238392, "longitude": 39.8228172],
-            ["title": "افواج",     "latitude": 21.420435, "longitude": 39.8267623],
-            ["title": "افواج",     "latitude": 21.418872, "longitude": 39.8234583]
-        ]
-        for point in points {
-            let annotation = MKPointAnnotation()
-            annotation.title = point["title"] as? String
-            annotation.coordinate = CLLocationCoordinate2D(latitude: point["latitude"] as! Double, longitude: point["longitude"] as! Double)
-            mapView.addAnnotation(annotation)
-            mapView.showAnnotations([annotation], animated: true)
-
+        let randomURL = "https://flextubeapp.com/create-random-point/21.423432/39.8261263/3.5/100"
+        Request.system.request(url: randomURL, method: .get, params: nil, headers: nil) { (result) in
+            if let results = result as? JSONDictionary {
+                let coordinates = results["results"] as! [JSONDictionary]
+                for i in coordinates {
+                    
+                    self.coordinates.append(coordinatesArray(lat: i["new_latitude"] as! Double, long: i["new_longitude"] as! Double))
+                    
+                }
+                for points in self.coordinates {
+                    let annotation = MKPointAnnotation()
+                    annotation.title = "Hujjaj"
+                    annotation.coordinate = CLLocationCoordinate2D(latitude: points.lat, longitude: points.long)
+                    self.mapView.showAnnotations([annotation], animated: true)
+                    
+                }
+                // self.mapView.setZoomByDelta(delta: 1.4, animated: true)
+                
+                
+            }
         }
+        
+        
+        
     }
     @IBAction func orgnaizationsAction(_ sender: Any) {
+      
         self.checkPointerOutlet.backgroundColor = .grayColor
         self.orgnaizationsOutlet.backgroundColor = .mainColor
         self.trafficPoliceOutlet.backgroundColor = .grayColor
@@ -106,6 +124,7 @@ class HajjMangViewController: UIViewController, CLLocationManagerDelegate, MKMap
             let annotation = MKPointAnnotation()
             annotation.title = point["title"] as? String
             annotation.coordinate = CLLocationCoordinate2D(latitude: point["latitude"] as! Double, longitude: point["longitude"] as! Double)
+            
             mapView.addAnnotation(annotation)
             mapView.showAnnotations([annotation], animated: true)
         }
