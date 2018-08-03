@@ -3,11 +3,15 @@
 //  HajjHackathonIOS
 //
 //  Created by Alsharif Abdullah on 01/08/2018.
-//  Copyright © 2018 Abdullah Alhaider. All rights reserved.
+//  Copyright © 2018 Alsharif Abdullah. All rights reserved.
 //
 
 import UIKit
 import MapKit
+
+class MyPointAnnotation : MKPointAnnotation {
+    var pinTintColor: UIColor?
+}
 class HajjMangViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
@@ -17,6 +21,7 @@ class HajjMangViewController: UIViewController, CLLocationManagerDelegate, MKMap
     @IBOutlet weak var numberOfOrgnaizations: UIView!
     @IBOutlet weak var numberOfHujjajView: UIView!
     @IBOutlet weak var trafficPoliceOutlet: UIButton!
+    @IBOutlet weak var optionView: UIStackView!
     
     let locationManager = CLLocationManager()
     var points: [CLLocationCoordinate2D] = [CLLocationCoordinate2D]()
@@ -39,16 +44,16 @@ class HajjMangViewController: UIViewController, CLLocationManagerDelegate, MKMap
         //Use diffrent colors
         self.mapView.layer.addSublayer(gradientLayer)
         
-        mapView.setZoomByDelta(delta: 0.2, animated: true)
+        mapView.setZoomByDelta(delta: 0.5, animated: true)
         mapView.showsUserLocation = true
-        mapView.showsCompass = true
-        
+    
         locationManager.delegate = self
         if CLLocationManager.locationServicesEnabled() {
             locationManager.requestWhenInUseAuthorization()
             locationManager.startUpdatingLocation()
         }
         setLayer()
+        NotificationCenter.default.addObserver(self, selector: #selector(getStatusViewBack), name: NSNotification.Name(rawValue: "showBackgroundView"), object: nil)
     }
     
     func setLayer() {
@@ -73,6 +78,27 @@ class HajjMangViewController: UIViewController, CLLocationManagerDelegate, MKMap
         // Dispose of any resources that can be recreated.
     }
     
+    @objc func getStatusViewBack(){
+        UIView.animate(withDuration: 0.5) {
+            self.optionView.frame.origin.y = 542
+            
+        }
+    }
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "myAnnotation") as? MKPinAnnotationView
+        
+        if annotationView == nil {
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "myAnnotation")
+        } else {
+            annotationView?.annotation = annotation
+        }
+        
+        if let annotation = annotation as? MyPointAnnotation {
+            annotationView?.pinTintColor = annotation.pinTintColor
+        }
+        
+        return annotationView
+    }
     @IBAction func checkPointerAction(_ sender: Any) {
         self.checkPointerOutlet.backgroundColor = .mainColor
         self.orgnaizationsOutlet.backgroundColor = .grayColor
@@ -91,11 +117,12 @@ class HajjMangViewController: UIViewController, CLLocationManagerDelegate, MKMap
                     
                 }
                 for points in self.coordinates {
-                    let annotation = MKPointAnnotation()
-                    annotation.title = "Hujjaj"
-                    annotation.coordinate = CLLocationCoordinate2D(latitude: points.lat, longitude: points.long)
-                    self.mapView.showAnnotations([annotation], animated: true)
-                    
+                    let hellox = MyPointAnnotation()
+                    hellox.title = "Hujjaj"
+                    hellox.pinTintColor = UIColor.mainColor
+                    hellox.coordinate = CLLocationCoordinate2D(latitude: points.lat, longitude: points.long)
+                    self.mapView.showAnnotations([hellox], animated: true)
+                    self.mapView.addAnnotation(hellox)
                 }
                 // self.mapView.setZoomByDelta(delta: 1.4, animated: true)
                 
@@ -109,7 +136,7 @@ class HajjMangViewController: UIViewController, CLLocationManagerDelegate, MKMap
     @IBAction func orgnaizationsAction(_ sender: Any) {
       
         self.checkPointerOutlet.backgroundColor = .grayColor
-        self.orgnaizationsOutlet.backgroundColor = .mainColor
+        self.orgnaizationsOutlet.backgroundColor = UIColor.orange
         self.trafficPoliceOutlet.backgroundColor = .grayColor
         self.trafficPoliceOutlet.setTitleColor(UIColor.black, for: .normal)
         self.orgnaizationsOutlet.setTitleColor(UIColor.white, for: .normal)
@@ -121,19 +148,19 @@ class HajjMangViewController: UIViewController, CLLocationManagerDelegate, MKMap
             ["title": "حملة الحيدر",     "latitude": 21.4300892, "longitude": 39.8192238]
         ]
         for point in points {
-            let annotation = MKPointAnnotation()
-            annotation.title = point["title"] as? String
-            annotation.coordinate = CLLocationCoordinate2D(latitude: point["latitude"] as! Double, longitude: point["longitude"] as! Double)
-            
-            mapView.addAnnotation(annotation)
-            mapView.showAnnotations([annotation], animated: true)
+            let hellox = MyPointAnnotation()
+            hellox.title = "Hujjaj"
+            hellox.pinTintColor = UIColor.orange
+            hellox.coordinate = CLLocationCoordinate2D(latitude: point["latitude"] as! Double, longitude: point["longitude"] as! Double)
+            self.mapView.showAnnotations([hellox], animated: true)
+            self.mapView.addAnnotation(hellox)
         }
 
     }
     @IBAction func trafficPoliceAction(_ sender: Any) {
         self.checkPointerOutlet.backgroundColor = .grayColor
         self.orgnaizationsOutlet.backgroundColor = .grayColor
-        self.trafficPoliceOutlet.backgroundColor = .mainColor
+        self.trafficPoliceOutlet.backgroundColor = UIColor.red
         self.trafficPoliceOutlet.setTitleColor(UIColor.white, for: .normal)
         self.orgnaizationsOutlet.setTitleColor(UIColor.black, for: .normal)
         self.checkPointerOutlet.setTitleColor(UIColor.black, for: .normal)
@@ -154,5 +181,19 @@ class HajjMangViewController: UIViewController, CLLocationManagerDelegate, MKMap
 
     }
     
-   
+    @IBAction func infoAction(_ sender: Any) {
+        UIView.animate(withDuration: 0.4, animations: {
+            self.optionView.frame.origin.y = 1500
+        }) { (ok) in
+            if ok {
+                let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "InfoViewController") as! InfoViewController
+                nextVC.selectedView = "view2"
+                self.present(nextVC, animated: true, completion: nil)
+            }
+            else {
+                print("ERROR")
+            }
+        }
+    }
+    
 }

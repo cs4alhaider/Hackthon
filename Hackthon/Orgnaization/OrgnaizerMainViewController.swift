@@ -79,26 +79,9 @@ class OrgnaizerMainViewController: UIViewController,CLLocationManagerDelegate,MK
         gradientLayer.frame = self.view.frame
         gradientLayer.colors =
             [UIColor.clear.cgColor,UIColor.white.withAlphaComponent(1).cgColor]
-        self.mapView.showsUserLocation = true
         self.mapView.layer.addSublayer(gradientLayer)
         addRadiusCircle(location: CLLocation(latitude: self.mapView.userLocation.coordinate.longitude , longitude: self.mapView.userLocation.coordinate.latitude ))
         NotificationCenter.default.addObserver(self, selector: #selector(getStatusViewBack), name: NSNotification.Name(rawValue: "showBackgroundView"), object: nil)
-//        var points = [ ["title":"",
-//                      "latitude": Double(),
-//                      "longitude": Double()
-//            ]] as [[String : Any]]
-//
-//        for number in 1...30 {
-//            let hajjID = number.description
-//            var index = 1.0
-//            var lat = Double(21.424662)
-//            lat = lat + index
-//            var long = Double(39.8223072)
-//            long = long + index
-//            points.append(["title": "\(hajjID) حاج",  "latitude": lat , "longitude": long])
-//            index = index + 1
-//
-//        }
 
 
     }
@@ -114,10 +97,11 @@ class OrgnaizerMainViewController: UIViewController,CLLocationManagerDelegate,MK
     
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-        let overlayRenderer : MKCircleRenderer = MKCircleRenderer(overlay: overlay);
-        overlayRenderer.lineWidth = 1.0
-        overlayRenderer.strokeColor = UIColor.red
-        return overlayRenderer
+        let circleRenderer : MKCircleRenderer = MKCircleRenderer(overlay: overlay);
+        circleRenderer.strokeColor = UIColor.red
+        circleRenderer.fillColor = UIColor(red: 0.0, green: 0.0, blue: 0.7, alpha: 0.5)
+        circleRenderer.lineWidth = 1.0
+        return circleRenderer
     }
     
  //542
@@ -141,6 +125,9 @@ class OrgnaizerMainViewController: UIViewController,CLLocationManagerDelegate,MK
             }
         }
     }
+    
+
+    
     
 }
 
