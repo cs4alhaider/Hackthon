@@ -12,4 +12,8 @@ extension String {
     var asImage: UIImage {
         return UIImage(named: self) ?? UIImage()
     }
+    
+    var loclized: String {
+        return NSLocalizedString(self, comment: "")
+    }
 }

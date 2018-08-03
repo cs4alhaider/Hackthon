@@ -16,6 +16,7 @@ class HajjViewController: UIViewController {
     @IBOutlet weak var dismissButton: UIButton!
     @IBOutlet weak var borderLineView: UIView!
     @IBOutlet weak var profileButton: UIButton!
+    @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var exitButton: UIButton!
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var backView: UIView!
@@ -23,6 +24,13 @@ class HajjViewController: UIViewController {
     @IBOutlet weak var whereAmIButton: UIButton!
     @IBOutlet weak var HajjHungerstationButton: UIButton!
     @IBOutlet weak var needHelpButton: UIButton!
+    @IBOutlet weak var profileBackView: UIView!
+    @IBOutlet weak var todayBackView: UIView!
+    @IBOutlet weak var todayLabel: UILabel!
+    @IBOutlet weak var campBackView: UIView!
+    @IBOutlet weak var campLabel: UILabel!
+    
+    
     
     
     let locationManager = CLLocationManager()
@@ -33,8 +41,8 @@ class HajjViewController: UIViewController {
         setupAtFirst()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     @IBAction func dismissButtonPresed(_ sender: UIButton) {
@@ -42,9 +50,7 @@ class HajjViewController: UIViewController {
     }
     
     @IBAction func profileButtonPresed(_ sender: UIButton) {
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Hajj", bundle: nil)
-        let newViewController = storyBoard.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
-        self.present(newViewController, animated: true, completion: nil)
+        showProfilePage()
     }
      
     @IBAction func WhereAmIPreesed(_ sender: UIButton) {
@@ -84,16 +90,22 @@ class HajjViewController: UIViewController {
     
     @objc fileprivate func backgrouncViewUP(){
         UIView.animate(withDuration: 0.4, animations: {
-            self.backgroundView.frame.origin.y = 542
+            self.backgroundView.frame.origin.y = 417
             self.backgroundView.alpha = 1
             self.exitButton.alpha = 0
+            self.profileImage.alpha = 1
+            self.borderLineView.alpha = 1
         })
     }
     
     fileprivate func backgrouncViewDOWN(){
         backgroundView.frame.origin.y = 1500
-        backgroundView.alpha = 0
-        exitButton.alpha = 1
+        UIView.animate(withDuration: 0.4) {
+            self.backgroundView.alpha = 0
+            self.exitButton.alpha = 1
+            self.profileImage.alpha = 0
+            self.borderLineView.alpha = 0
+        }
     }
     
     fileprivate func mapEffect() {
@@ -101,6 +113,13 @@ class HajjViewController: UIViewController {
         gradientLayer.frame = self.view.frame
         gradientLayer.colors = [UIColor.clear.cgColor,UIColor.white.withAlphaComponent(1).cgColor]
         mapView.layer.addSublayer(gradientLayer)
+    }
+    
+    fileprivate func showProfilePage() {
+        backgrouncViewDOWN()
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Hajj", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
+        self.present(newViewController, animated: true, completion: nil)
     }
     
     fileprivate func showMap() {
@@ -152,20 +171,27 @@ class HajjViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(backgrouncViewUP), name: NSNotification.Name(rawValue: "showBackgroundView"), object: nil)
         
-        mapView.delegate = self 
+        mapView.delegate = self
         
-        dismissButton.applyButtonDesign(title: "العودة", titleColor: .black, cornerRadius: 5, backgroundColor: .grayColor, shadowColor: .black, shadowRadius: 4, shadowOpacity: 0.3)
+        dismissButton.applyButtonDesign(title: "", titleColor: .black, cornerRadius: 5, backgroundColor: .clear, shadowColor: .clear, shadowRadius: 0, shadowOpacity: 0)
+
+        profileImage.image = "me".asImage
+        profileImage.clipsToBounds = true
+        profileImage.layer.cornerRadius = profileImage.frame.size.height / 2
+        profileImage.layer.borderWidth = 1.5
+        profileImage.layer.borderColor = UIColor.grayColor.cgColor
         
-        profileButton.setImage("profile".asImage, for: .normal)
-        profileButton.setTitle("", for: .normal)
-        profileButton.imageView?.contentMode = .scaleAspectFit
-        profileButton.imageView?.image = profileButton.imageView?.image?.withRenderingMode(.alwaysTemplate)
-        profileButton.imageView?.tintColor = .mainColor
-        profileButton.imageView?.layer.cornerRadius = profileButton.frame.size.height / 2
-        profileButton.layer.borderWidth = 1.5
-        profileButton.layer.borderColor = UIColor.grayColor.cgColor
+        profileBackView.layer.cornerRadius = 5
+        
+        todayBackView.layer.cornerRadius = 5
+        todayBackView.backgroundColor = .grayColor
+        todayLabel.textColor = .black
+        
+        campBackView.layer.cornerRadius = 5
+        campBackView.backgroundColor = .grayColor
+        campLabel.textColor = .black
+        
         profileButton.applyViewDesign(masksToBounds: false, shadowColor: .black, cornerRadius: profileButton.frame.size.height / 2, shadowOpacity: 0.3, shadowOffset: CGSize(width: 0, height: 0), shadowRadius: 10)
-        profileButton.backgroundColor = .grayColor
         
         exitButton.isHidden = true
         exitButton.setImage("exit".asImage, for: .normal)
