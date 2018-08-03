@@ -3,7 +3,7 @@
 //  HajjHackathonIOS
 //
 //  Created by Alsharif Abdullah on 01/08/2018.
-//  Copyright © 2018 Abdullah Alhaider. All rights reserved.
+//  Copyright © 2018 Alsharif Abdullah. All rights reserved.
 //
 
 import UIKit
@@ -85,11 +85,13 @@ class QRViewController: UIViewController, QRCodeReaderViewControllerDelegate {
                         })
                     }
                     else {
-                        let storyboad = UIStoryboard(name: "Orgnaization", bundle: nil)
-                        let nextVC = storyboad.instantiateViewController(withIdentifier: "OrgnaizerMainViewController") as! OrgnaizerMainViewController
+                        let storyboad = UIStoryboard(name: "Hajj", bundle: nil)
+                        let nextVC = storyboad.instantiateViewController(withIdentifier: "HajjViewController") as! HajjViewController
                         self.indicator.stopAnimating()
                         self.indicator.hidesWhenStopped = true
-                        self.present(nextVC, animated: true, completion: nil)
+                        self.present(nextVC, animated: true, completion: {
+                            self.alert("مرحبا! تم الدخول بنجاح")
+                        })
                     }
                     
                 }
@@ -106,8 +108,9 @@ class QRViewController: UIViewController, QRCodeReaderViewControllerDelegate {
                         let nextVC = storyboad.instantiateViewController(withIdentifier: "HajjMangViewController") as! HajjMangViewController
                         self.indicator.stopAnimating()
                         self.indicator.hidesWhenStopped = true
-                        self.present(nextVC, animated: true, completion: nil)
-                    }
+                        self.present(nextVC, animated: true, completion: {
+                            self.alert("مرحبا! تم الدخول بنجاح")
+                        })                    }
                  
                 }
                 else if self.nextView == "view3" {
@@ -122,13 +125,14 @@ class QRViewController: UIViewController, QRCodeReaderViewControllerDelegate {
                         let nextVC = storyboad.instantiateViewController(withIdentifier: "OrgnaizerMainViewController") as! OrgnaizerMainViewController
                         self.indicator.stopAnimating()
                         self.indicator.hidesWhenStopped = true
-                        self.present(nextVC, animated: true, completion: nil)
-                    }
+                        self.present(nextVC, animated: true, completion: {
+                            self.alert("مرحبا! تم الدخول بنجاح")
+                        })                    }
                 }
             }
         }
         
-        
+ 
         print(result.value)
         
     }

@@ -3,7 +3,7 @@
 //  HajjHackathonIOS
 //
 //  Created by Alsharif Abdullah on 01/08/2018.
-//  Copyright © 2018 Abdullah Alhaider. All rights reserved.
+//  Copyright © 2018 Alsharif Abdullah. All rights reserved.
 //
 
 import Foundation
@@ -32,7 +32,15 @@ let hudView = UIView(frame: CGRect(x: 0, y: 0, width: 80, height: 80))
 let indicatorView = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 80, height: 80))
 let APP_NAME = "Hajj"
 
-
+extension MKPinAnnotationView {
+    class func bluePinColor() -> UIColor {
+        return UIColor.blue
+    }
+    class func mainPinColor() -> UIColor {
+        return UIColor.mainColor
+    }
+    
+}
 extension UIColor {
     static var mainColor: UIColor {
         return UIColor(red:0.15, green:0.67, blue:0.53, alpha:1.0)

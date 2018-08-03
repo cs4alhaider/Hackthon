@@ -139,13 +139,13 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="أنا" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JMY-m7-aw4">
                                 <rect key="frame" x="174.33333333333334" y="294" width="24.666666666666657" height="59.666666666666686"/>
                                 <fontDescription key="fontDescription" name="JannaLT-Regular" family="Janna LT" pointSize="32"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ofd-2a-xG4">
-                                <rect key="frame" x="124" y="475" width="127" height="52"/>
+                                <rect key="frame" x="116.33333333333331" y="475" width="143" height="52"/>
                                 <fontDescription key="fontDescription" name="JannaLT-Regular" family="Janna LT" pointSize="21"/>
-                                <state key="normal" title="احتاج مساعدة ؟">
+                                <state key="normal" title="تـحتــاج مســـاعدة ؟">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
