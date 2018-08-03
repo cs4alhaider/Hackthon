@@ -74,7 +74,6 @@
 		1AD97E9821121D120014937A /* 15.OTF in Resources */ = {isa = PBXBuildFile; fileRef = 1AD97E6121121D110014937A /* 15.OTF */; };
 		1AD97E9921121D120014937A /* 14.OTF in Resources */ = {isa = PBXBuildFile; fileRef = 1AD97E6221121D110014937A /* 14.OTF */; };
 		1AD97E9C21122B7B0014937A /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD97E9B21122B7B0014937A /* Config.swift */; };
-		1AD97E9E21122FD60014937A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1AD97E9D21122FD60014937A /* Info.plist */; };
 		1AD97EA121123C270014937A /* Orgnaization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AD97EA021123C270014937A /* Orgnaization.storyboard */; };
 		1AD97EA521124C4D0014937A /* OrgnaizerMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD97EA421124C4D0014937A /* OrgnaizerMainViewController.swift */; };
 		1AD97EA821128C830014937A /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD97EA721128C830014937A /* InfoViewController.swift */; };
@@ -675,7 +674,6 @@
 				1AD97E6E21121D120014937A /* 46.ttf in Resources */,
 				1AD97E9821121D120014937A /* 15.OTF in Resources */,
 				1AD97E7021121D120014937A /* 1.ttf in Resources */,
-				1AD97E9E21122FD60014937A /* Info.plist in Resources */,
 				1AD97E6C21121D120014937A /* 4.ttf in Resources */,
 				1AD97EB7211350A10014937A /* Hajj.storyboard in Resources */,
 				1AD97E9921121D120014937A /* 14.OTF in Resources */,
@@ -1003,14 +1001,14 @@
 				CODE_SIGN_ENTITLEMENTS = Hackthon/Hackthon.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6KNU45H2KW;
+				DEVELOPMENT_TEAM = G69L3HCQBT;
 				INFOPLIST_FILE = Hackthon/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.alhaider.hack;
+				PRODUCT_BUNDLE_IDENTIFIER = net.alhaider.hackthonIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -1026,14 +1024,14 @@
 				CODE_SIGN_ENTITLEMENTS = Hackthon/Hackthon.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6KNU45H2KW;
+				DEVELOPMENT_TEAM = G69L3HCQBT;
 				INFOPLIST_FILE = Hackthon/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.alhaider.hack;
+				PRODUCT_BUNDLE_IDENTIFIER = net.alhaider.hackthonIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;

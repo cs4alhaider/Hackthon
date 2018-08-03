@@ -30,9 +30,6 @@ class HajjViewController: UIViewController {
     @IBOutlet weak var campBackView: UIView!
     @IBOutlet weak var campLabel: UILabel!
     
-    
-    
-    
     let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
@@ -219,6 +216,7 @@ class HajjViewController: UIViewController {
     }
     
 }
+
 extension HajjViewController: MKMapViewDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

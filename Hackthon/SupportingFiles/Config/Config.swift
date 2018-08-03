@@ -81,7 +81,7 @@ extension UIViewController {
     func alert(_ mess: String){
         let messageView: MessageView = MessageView.viewFromNib(layout: .centeredView)
         messageView.configureBackgroundView(width: 250)
-        messageView.configureContent(title: "Hajj", body: mess, iconImage: nil, iconText: "🕋", buttonImage: nil, buttonTitle: "OK!") { _ in
+        messageView.configureContent(title: "Hajj", body: mess, iconImage: nil, iconText: "🕋", buttonImage: nil, buttonTitle: "حسناً") { _ in
             SwiftMessages.hide()
         }
         messageView.backgroundView.backgroundColor = UIColor.init(white: 0.97, alpha: 1)

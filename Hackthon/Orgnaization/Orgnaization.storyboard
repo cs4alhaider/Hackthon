@@ -42,7 +42,7 @@
                                                     <constraint firstAttribute="width" constant="36" id="pMr-yh-toV"/>
                                                 </constraints>
                                             </imageView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="لا يوجد حاج خارج منطقة الحملة" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fj9-Fb-YbA">
+                                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" text="لا يوجد حاج خارج منطقة الحملة" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fj9-Fb-YbA">
                                                 <rect key="frame" x="46.333333333333329" y="56" width="240.66666666666669" height="51.666666666666657"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="JannaLT-Bold" family="Janna LT" pointSize="19"/>
