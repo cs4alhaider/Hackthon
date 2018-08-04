@@ -33,8 +33,26 @@ class OrgnaizerMainViewController: UIViewController,CLLocationManagerDelegate,MK
     }
     var coordinates: [coordinatesArray] = []
 
+    fileprivate lazy var dismissButton: UIButton = {
+        let button = UIButton()
+        view.addSubview(button)
+        button.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        button.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -70).isActive = true
+        button.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 70).isActive = true
+        button.heightAnchor.constraint(equalToConstant: 110).isActive = true
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(dismissView), for: .touchUpInside)
+        button.backgroundColor = .clear
+        return button
+    }()
+    
+    @objc fileprivate func dismissView(){
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addSubview(dismissButton)
         self.mapView.delegate = self
         locationManager.delegate = self
         getRandom()

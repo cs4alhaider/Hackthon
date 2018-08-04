@@ -19,7 +19,8 @@ class ImportantDatesViewController: UIViewController {
     
     
     fileprivate let cellID = "ImportantDatesCell"
-    fileprivate let url = "https://flextubeapp.com/getdates"
+    //fileprivate let url = "https://flextubeapp.com/getdates"
+    fileprivate let url = "https://api.myjson.com/bins/14zlxs"
     fileprivate var days: [String] = []
     fileprivate var dates: [String] = []
     fileprivate var descriptionText: [String] = []

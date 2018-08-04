@@ -14,7 +14,6 @@
 		1AD97E1521121AB20014937A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD97E1121121AB20014937A /* ViewController.swift */; };
 		1AD97E1621121AB20014937A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AD97E1221121AB20014937A /* Main.storyboard */; };
 		1AD97E1721121AB20014937A /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD97E1421121AB20014937A /* QRViewController.swift */; };
-		1AD97E1C21121AD50014937A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AD97E1921121AD50014937A /* LaunchScreen.storyboard */; };
 		1AD97E1D21121AD50014937A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD97E1B21121AD50014937A /* AppDelegate.swift */; };
 		1AD97E2121121B0B0014937A /* HajjMangViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD97E1F21121B0A0014937A /* HajjMangViewController.swift */; };
 		1AD97E2221121B0B0014937A /* HajjManagment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AD97E2021121B0A0014937A /* HajjManagment.storyboard */; };
@@ -122,7 +121,6 @@
 		1AD97E1121121AB20014937A /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1AD97E1321121AB20014937A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1AD97E1421121AB20014937A /* QRViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
-		1AD97E1A21121AD50014937A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1AD97E1B21121AD50014937A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1AD97E1F21121B0A0014937A /* HajjMangViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HajjMangViewController.swift; sourceTree = "<group>"; };
 		1AD97E2021121B0A0014937A /* HajjManagment.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HajjManagment.storyboard; sourceTree = "<group>"; };
@@ -275,15 +273,14 @@
 		1AD97DDF21121A6D0014937A /* Hackthon */ = {
 			isa = PBXGroup;
 			children = (
-				CA88FFD82113B188004CC1BC /* Hackthon.entitlements */,
+				1AD97E1B21121AD50014937A /* AppDelegate.swift */,
+				CA781778211355D5007E5D51 /* Models */,
+				1AD97E1021121AB20014937A /* Views */,
+				E8DCC5EE2115B5E2001F7B54 /* Controllers */,
 				1AD97E2521121B670014937A /* SupportingFiles */,
-				1AD97EAC211350A10014937A /* Hajj */,
-				1AD97E9F21123C050014937A /* Orgnaization */,
-				1AD97E1E21121B0A0014937A /* HajjManagment */,
-				1AD97E1021121AB20014937A /* Main */,
-				1AD97DE921121A6E0014937A /* LaunchScreen.storyboard */,
-				1AD97E9D21122FD60014937A /* Info.plist */,
 				1AD97E0E21121AA10014937A /* Assets.xcassets */,
+				CA88FFD82113B188004CC1BC /* Hackthon.entitlements */,
+				1AD97E9D21122FD60014937A /* Info.plist */,
 				CA88FFD92113C360004CC1BC /* GoogleService-Info.plist */,
 			);
 			path = Hackthon;
@@ -306,30 +303,21 @@
 			path = HackthonUITests;
 			sourceTree = "<group>";
 		};
-		1AD97E1021121AB20014937A /* Main */ = {
+		1AD97E1021121AB20014937A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1AD97E1821121AD50014937A /* SupportingFiles */,
+				1AD97DE921121A6E0014937A /* LaunchScreen.storyboard */,
 				1AD97E1221121AB20014937A /* Main.storyboard */,
-				1AD97E1121121AB20014937A /* ViewController.swift */,
-				1AD97E1421121AB20014937A /* QRViewController.swift */,
+				1AD97EA021123C270014937A /* Orgnaization.storyboard */,
+				1AD97EAF211350A10014937A /* Hajj.storyboard */,
+				1AD97E2021121B0A0014937A /* HajjManagment.storyboard */,
 			);
-			path = Main;
-			sourceTree = "<group>";
-		};
-		1AD97E1821121AD50014937A /* SupportingFiles */ = {
-			isa = PBXGroup;
-			children = (
-				1AD97E1921121AD50014937A /* LaunchScreen.storyboard */,
-				1AD97E1B21121AD50014937A /* AppDelegate.swift */,
-			);
-			path = SupportingFiles;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		1AD97E1E21121B0A0014937A /* HajjManagment */ = {
 			isa = PBXGroup;
 			children = (
-				1AD97E2021121B0A0014937A /* HajjManagment.storyboard */,
 				1AD97E1F21121B0A0014937A /* HajjMangViewController.swift */,
 			);
 			path = HajjManagment;
@@ -338,7 +326,6 @@
 		1AD97E2521121B670014937A /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
-				CA781778211355D5007E5D51 /* Models */,
 				1AD97EA92112A35A0014937A /* Request */,
 				1AD97E9A21122B7B0014937A /* Config */,
 				1AD97E2B21121D110014937A /* HelpMac-Font */,
@@ -421,7 +408,6 @@
 			isa = PBXGroup;
 			children = (
 				1AD97EA621128C790014937A /* info */,
-				1AD97EA021123C270014937A /* Orgnaization.storyboard */,
 				1AD97EA421124C4D0014937A /* OrgnaizerMainViewController.swift */,
 			);
 			path = Orgnaization;
@@ -446,8 +432,6 @@
 		1AD97EAC211350A10014937A /* Hajj */ = {
 			isa = PBXGroup;
 			children = (
-				1AD97EAF211350A10014937A /* Hajj.storyboard */,
-				CA78177921135842007E5D51 /* Hajj Controller */,
 				CA78177A21135857007E5D51 /* ImportentDates Controller */,
 				CA78177B2113586C007E5D51 /* GetHelp Controller */,
 				CA88FFD721138AC9004CC1BC /* Profile */,
@@ -477,6 +461,7 @@
 			isa = PBXGroup;
 			children = (
 				1AD97EB2211350A10014937A /* HajjViewController.swift */,
+				1AD97EAC211350A10014937A /* Hajj */,
 			);
 			path = "Hajj Controller";
 			sourceTree = "<group>";
@@ -505,6 +490,26 @@
 				CA88FFD521138AC2004CC1BC /* ProfileViewController.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		E8DCC5ED2115B5CB001F7B54 /* Main Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1AD97E1121121AB20014937A /* ViewController.swift */,
+				1AD97E1421121AB20014937A /* QRViewController.swift */,
+				CA78177921135842007E5D51 /* Hajj Controller */,
+				1AD97E9F21123C050014937A /* Orgnaization */,
+				1AD97E1E21121B0A0014937A /* HajjManagment */,
+			);
+			path = "Main Controllers";
+			sourceTree = "<group>";
+		};
+		E8DCC5EE2115B5E2001F7B54 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E8DCC5ED2115B5CB001F7B54 /* Main Controllers */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -638,7 +643,6 @@
 				1AD97E8D21121D120014937A /* 17.ttf in Resources */,
 				1AD97E9621121D120014937A /* 13.OTF in Resources */,
 				1AD97E8221121D120014937A /* 18.ttf in Resources */,
-				1AD97E1C21121AD50014937A /* LaunchScreen.storyboard in Resources */,
 				1AD97E7221121D120014937A /* 47.ttf in Resources */,
 				1AD97E6321121D120014937A /* 6.ttf in Resources */,
 				1AD97E7D21121D120014937A /* 34.ttf in Resources */,
@@ -868,14 +872,6 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		1AD97E1921121AD50014937A /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1AD97E1A21121AD50014937A /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -1003,7 +999,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G69L3HCQBT;
 				INFOPLIST_FILE = Hackthon/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1026,7 +1022,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G69L3HCQBT;
 				INFOPLIST_FILE = Hackthon/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

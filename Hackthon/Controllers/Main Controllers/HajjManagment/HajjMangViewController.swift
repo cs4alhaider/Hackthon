@@ -33,10 +33,41 @@ class HajjMangViewController: UIViewController, CLLocationManagerDelegate, MKMap
     }
     var coordinates: [coordinatesArray] = []
     
+    fileprivate lazy var dismissButton: UIButton = {
+        let button = UIButton()
+        view.addSubview(button)
+        button.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        button.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -70).isActive = true
+        button.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 70).isActive = true
+        button.heightAnchor.constraint(equalToConstant: 110).isActive = true
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(dismissView), for: .touchUpInside)
+        button.backgroundColor = .clear
+        return button
+    }()
+    
+    @objc fileprivate func dismissView(){
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.mapView.delegate = self
+        view.addSubview(dismissButton)
+        setup()
+        setLayer()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    fileprivate func setup() {
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(getStatusViewBack), name: NSNotification.Name(rawValue: "showBackgroundView"), object: nil)
+        
+        mapView.delegate = self
         locationManager.delegate = self
+        
         let gradientLayer:CAGradientLayer = CAGradientLayer()
         gradientLayer.frame = self.view.frame
         gradientLayer.colors =
@@ -46,14 +77,12 @@ class HajjMangViewController: UIViewController, CLLocationManagerDelegate, MKMap
         
         mapView.setZoomByDelta(delta: 0.5, animated: true)
         mapView.showsUserLocation = true
-    
+        
         locationManager.delegate = self
         if CLLocationManager.locationServicesEnabled() {
             locationManager.requestWhenInUseAuthorization()
             locationManager.startUpdatingLocation()
         }
-        setLayer()
-        NotificationCenter.default.addObserver(self, selector: #selector(getStatusViewBack), name: NSNotification.Name(rawValue: "showBackgroundView"), object: nil)
     }
     
     func setLayer() {
@@ -69,21 +98,15 @@ class HajjMangViewController: UIViewController, CLLocationManagerDelegate, MKMap
         self.trafficPoliceOutlet.setTitleColor(UIColor.black, for: .normal)
         self.orgnaizationsOutlet.setTitleColor(UIColor.black, for: .normal)
         self.checkPointerOutlet.setTitleColor(UIColor.black, for: .normal)
-        
-
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     @objc func getStatusViewBack(){
         UIView.animate(withDuration: 0.5) {
             self.optionView.frame.origin.y = 542
             
         }
     }
+    
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "myAnnotation") as? MKPinAnnotationView
         
@@ -99,6 +122,7 @@ class HajjMangViewController: UIViewController, CLLocationManagerDelegate, MKMap
         
         return annotationView
     }
+    
     @IBAction func checkPointerAction(_ sender: Any) {
         self.checkPointerOutlet.backgroundColor = .mainColor
         self.orgnaizationsOutlet.backgroundColor = .grayColor
@@ -133,6 +157,7 @@ class HajjMangViewController: UIViewController, CLLocationManagerDelegate, MKMap
         
         
     }
+    
     @IBAction func orgnaizationsAction(_ sender: Any) {
       
         self.checkPointerOutlet.backgroundColor = .grayColor
@@ -157,6 +182,7 @@ class HajjMangViewController: UIViewController, CLLocationManagerDelegate, MKMap
         }
 
     }
+    
     @IBAction func trafficPoliceAction(_ sender: Any) {
         self.checkPointerOutlet.backgroundColor = .grayColor
         self.orgnaizationsOutlet.backgroundColor = .grayColor

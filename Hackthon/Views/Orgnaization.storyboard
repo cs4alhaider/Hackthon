@@ -4,15 +4,11 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="36.ttf">
-            <string>JannaLT-Bold</string>
-        </array>
         <array key="37.ttf">
             <string>JannaLT-Regular</string>
         </array>
@@ -43,9 +39,9 @@
                                                 </constraints>
                                             </imageView>
                                             <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" text="لا يوجد حاج خارج منطقة الحملة" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fj9-Fb-YbA">
-                                                <rect key="frame" x="46.333333333333329" y="56" width="240.66666666666669" height="51.666666666666657"/>
+                                                <rect key="frame" x="48.666666666666671" y="56" width="236.33333333333331" height="51.666666666666657"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" name="JannaLT-Bold" family="Janna LT" pointSize="19"/>
+                                                <fontDescription key="fontDescription" name="JannaLT-Regular" family="Janna LT" pointSize="19"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                         </subviews>
@@ -151,8 +147,8 @@
                             <constraint firstItem="saE-jc-sKO" firstAttribute="centerX" secondItem="JlY-El-VCa" secondAttribute="centerX" id="5hX-Vd-0Nk"/>
                             <constraint firstItem="JlY-El-VCa" firstAttribute="trailing" secondItem="D1f-sm-frQ" secondAttribute="trailing" id="A42-s7-hKA"/>
                             <constraint firstItem="KTi-Zi-dRu" firstAttribute="leading" secondItem="D1f-sm-frQ" secondAttribute="leading" constant="16" id="Bke-hZ-cO3"/>
-                            <constraint firstItem="saE-jc-sKO" firstAttribute="top" secondItem="D1f-sm-frQ" secondAttribute="top" constant="14" id="CD7-fP-z9U"/>
                             <constraint firstItem="JlY-El-VCa" firstAttribute="leading" secondItem="D1f-sm-frQ" secondAttribute="leading" id="LNb-Vn-azT"/>
+                            <constraint firstItem="saE-jc-sKO" firstAttribute="centerY" secondItem="KTi-Zi-dRu" secondAttribute="centerY" id="ZSV-Hw-xbr"/>
                             <constraint firstItem="D1f-sm-frQ" firstAttribute="bottom" secondItem="4qa-qX-aRS" secondAttribute="bottom" constant="23" id="e0y-LF-29q"/>
                             <constraint firstItem="JlY-El-VCa" firstAttribute="top" secondItem="jX2-x3-D6V" secondAttribute="top" id="eqN-1g-3aI"/>
                             <constraint firstItem="KTi-Zi-dRu" firstAttribute="top" secondItem="D1f-sm-frQ" secondAttribute="top" constant="14" id="hjc-7U-P1d"/>

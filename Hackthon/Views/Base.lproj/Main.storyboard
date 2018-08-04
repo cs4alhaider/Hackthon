@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -24,46 +23,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="RdC-dH-Ndn">
-                                <rect key="frame" x="18" y="362" width="338" height="98"/>
+                                <rect key="frame" x="18" y="410.33333333333331" width="338" height="98"/>
                                 <subviews>
-                                    <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gcl-Az-4hX">
-                                        <rect key="frame" x="0.0" y="0.0" width="106" height="98"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Xlp-6f-Pxn">
-                                            <rect key="frame" x="0.0" y="0.0" width="106" height="98"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXr-2N-OVd">
-                                                    <rect key="frame" x="23" y="7" width="60" height="64"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="60" id="V4w-Bw-5vk"/>
-                                                        <constraint firstAttribute="height" constant="64" id="fNZ-4G-eEP"/>
-                                                    </constraints>
-                                                    <state key="normal" image="hajji"/>
-                                                    <connections>
-                                                        <action selector="hajjAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ITb-zJ-x2N"/>
-                                                    </connections>
-                                                </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="حاج" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hsL-5q-4Au">
-                                                    <rect key="frame" x="41.666666666666664" y="62" width="22.999999999999993" height="33.666666666666657"/>
-                                                    <fontDescription key="fontDescription" name="JannaLT-Regular" family="Janna LT" pointSize="18"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="hsL-5q-4Au" firstAttribute="top" secondItem="Xlp-6f-Pxn" secondAttribute="top" constant="62" id="H4u-wx-qgl"/>
-                                                <constraint firstItem="hsL-5q-4Au" firstAttribute="centerX" secondItem="Xlp-6f-Pxn" secondAttribute="centerX" id="UPK-SJ-OAF"/>
-                                                <constraint firstItem="gXr-2N-OVd" firstAttribute="centerX" secondItem="Xlp-6f-Pxn" secondAttribute="centerX" id="V2C-Ud-mUU"/>
-                                                <constraint firstItem="gXr-2N-OVd" firstAttribute="top" secondItem="Xlp-6f-Pxn" secondAttribute="top" constant="7" id="qtD-Am-ItY"/>
-                                            </constraints>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="98" id="VIc-SG-XYl"/>
-                                            <constraint firstAttribute="width" constant="106" id="gsI-I7-86c"/>
-                                        </constraints>
-                                        <blurEffect style="light"/>
-                                    </visualEffectView>
                                     <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xwU-yy-TLg">
-                                        <rect key="frame" x="116" y="0.0" width="106" height="98"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="106" height="98"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="4Nh-6x-zah">
                                             <rect key="frame" x="0.0" y="0.0" width="106" height="98"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -95,6 +58,42 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="106" id="5aR-3X-fS8"/>
                                             <constraint firstAttribute="height" constant="98" id="h2A-RD-a6f"/>
+                                        </constraints>
+                                        <blurEffect style="light"/>
+                                    </visualEffectView>
+                                    <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gcl-Az-4hX">
+                                        <rect key="frame" x="116" y="0.0" width="106" height="98"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Xlp-6f-Pxn">
+                                            <rect key="frame" x="0.0" y="0.0" width="106" height="98"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXr-2N-OVd">
+                                                    <rect key="frame" x="23" y="7" width="60" height="64"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="V4w-Bw-5vk"/>
+                                                        <constraint firstAttribute="height" constant="64" id="fNZ-4G-eEP"/>
+                                                    </constraints>
+                                                    <state key="normal" image="hajji"/>
+                                                    <connections>
+                                                        <action selector="hajjAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ITb-zJ-x2N"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="حاج" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hsL-5q-4Au">
+                                                    <rect key="frame" x="41.666666666666657" y="62" width="23" height="33.666666666666657"/>
+                                                    <fontDescription key="fontDescription" name="JannaLT-Regular" family="Janna LT" pointSize="18"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="hsL-5q-4Au" firstAttribute="top" secondItem="Xlp-6f-Pxn" secondAttribute="top" constant="62" id="H4u-wx-qgl"/>
+                                                <constraint firstItem="hsL-5q-4Au" firstAttribute="centerX" secondItem="Xlp-6f-Pxn" secondAttribute="centerX" id="UPK-SJ-OAF"/>
+                                                <constraint firstItem="gXr-2N-OVd" firstAttribute="centerX" secondItem="Xlp-6f-Pxn" secondAttribute="centerX" id="V2C-Ud-mUU"/>
+                                                <constraint firstItem="gXr-2N-OVd" firstAttribute="top" secondItem="Xlp-6f-Pxn" secondAttribute="top" constant="7" id="qtD-Am-ItY"/>
+                                            </constraints>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="98" id="VIc-SG-XYl"/>
+                                            <constraint firstAttribute="width" constant="106" id="gsI-I7-86c"/>
                                         </constraints>
                                         <blurEffect style="light"/>
                                     </visualEffectView>
@@ -137,14 +136,14 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="أنا" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JMY-m7-aw4">
-                                <rect key="frame" x="174.33333333333334" y="294" width="24.666666666666657" height="59.666666666666686"/>
-                                <fontDescription key="fontDescription" name="JannaLT-Regular" family="Janna LT" pointSize="32"/>
+                                <rect key="frame" x="174" y="340.33333333333331" width="25.666666666666657" height="61.666666666666686"/>
+                                <fontDescription key="fontDescription" name="JannaLT-Regular" family="Janna LT" pointSize="33"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ofd-2a-xG4">
-                                <rect key="frame" x="116.33333333333331" y="475" width="143" height="52"/>
-                                <fontDescription key="fontDescription" name="JannaLT-Regular" family="Janna LT" pointSize="21"/>
+                                <rect key="frame" x="120.33333333333331" y="718" width="136" height="50"/>
+                                <fontDescription key="fontDescription" name="JannaLT-Regular" family="Janna LT" pointSize="20"/>
                                 <state key="normal" title="تـحتــاج مســـاعدة ؟">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -153,7 +152,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HajjLogo" translatesAutoresizingMaskIntoConstraints="NO" id="qAu-Ih-KIr">
-                                <rect key="frame" x="140" y="71" width="95" height="181"/>
+                                <rect key="frame" x="140" y="79" width="95" height="181"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="95" id="VgR-Ga-5YE"/>
                                     <constraint firstAttribute="height" constant="181" id="krS-Ks-Z8e"/>
@@ -162,18 +161,19 @@
                         </subviews>
                         <color key="backgroundColor" red="0.14509803921568626" green="0.6705882352941176" blue="0.52549019607843139" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="JMY-m7-aw4" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-35" id="ImU-la-EC8"/>
                             <constraint firstItem="JMY-m7-aw4" firstAttribute="centerX" secondItem="qAu-Ih-KIr" secondAttribute="centerX" constant="-0.83333333333331439" id="SS3-qv-rQg"/>
-                            <constraint firstItem="Ofd-2a-xG4" firstAttribute="top" secondItem="RdC-dH-Ndn" secondAttribute="bottom" constant="15" id="Sh0-qI-ddh"/>
-                            <constraint firstItem="qAu-Ih-KIr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="27" id="bms-VT-ACu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ofd-2a-xG4" secondAttribute="bottom" constant="10" id="Xdr-ya-BxM"/>
+                            <constraint firstItem="qAu-Ih-KIr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="35" id="bms-VT-ACu"/>
                             <constraint firstItem="qAu-Ih-KIr" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="htz-KJ-Dse"/>
                             <constraint firstItem="RdC-dH-Ndn" firstAttribute="top" secondItem="JMY-m7-aw4" secondAttribute="bottom" constant="8.3300000000000001" id="ioD-tV-cud"/>
                             <constraint firstItem="RdC-dH-Ndn" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="k2n-zN-aBL"/>
-                            <constraint firstItem="JMY-m7-aw4" firstAttribute="top" secondItem="qAu-Ih-KIr" secondAttribute="bottom" constant="42" id="mN9-Gq-K82"/>
                             <constraint firstItem="Ofd-2a-xG4" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="t42-jw-FWv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="backStackView" destination="RdC-dH-Ndn" id="hDg-Nt-FJX"/>
                         <outlet property="hajjAdminOutlet" destination="zSE-kI-8Qq" id="HiK-oV-ZIH"/>
                         <outlet property="hajjManagmentOutlet" destination="Wzq-ie-56Y" id="1vk-eh-0qY"/>
                         <outlet property="hajjOutlet" destination="gXr-2N-OVd" id="NEo-iI-44y"/>

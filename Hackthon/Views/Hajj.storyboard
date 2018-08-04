@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -212,21 +211,6 @@
                                     <action selector="exitButton:" destination="sni-iu-pYg" eventType="touchUpInside" id="bHU-Ij-ctk"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KAF-2j-TFa">
-                                <rect key="frame" x="290" y="49" width="70" height="35"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="70" id="lK2-4Y-M7m"/>
-                                    <constraint firstAttribute="height" constant="35" id="ykU-Ff-eUT"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="JannaLT-Regular" family="Janna LT" pointSize="16"/>
-                                <state key="normal">
-                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="dismissButtonPresed:" destination="sni-iu-pYg" eventType="touchUpInside" id="BZQ-AE-m5x"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMg-VU-f5F">
                                 <rect key="frame" x="58" y="49" width="301" height="0.0"/>
                                 <fontDescription key="fontDescription" name="JannaLT-Regular" family="Janna LT" pointSize="19"/>
@@ -242,8 +226,6 @@
                             <constraint firstItem="Izo-z2-AMw" firstAttribute="trailing" secondItem="rMg-VU-f5F" secondAttribute="trailing" constant="16" id="Wpk-ap-cHO"/>
                             <constraint firstItem="11n-yi-jIh" firstAttribute="top" secondItem="Izo-z2-AMw" secondAttribute="top" constant="5" id="Wux-SS-Bip"/>
                             <constraint firstItem="rMg-VU-f5F" firstAttribute="leading" secondItem="11n-yi-jIh" secondAttribute="trailing" constant="8" id="eD7-iN-cRU"/>
-                            <constraint firstItem="KAF-2j-TFa" firstAttribute="top" secondItem="Izo-z2-AMw" secondAttribute="top" constant="5" id="gc5-cS-mfN"/>
-                            <constraint firstItem="Izo-z2-AMw" firstAttribute="trailing" secondItem="KAF-2j-TFa" secondAttribute="trailing" constant="15" id="oHb-GW-X7E"/>
                             <constraint firstItem="fv5-ic-mSn" firstAttribute="trailing" secondItem="Izo-z2-AMw" secondAttribute="trailing" id="uV1-w9-yJB"/>
                             <constraint firstAttribute="bottomMargin" secondItem="fv5-ic-mSn" secondAttribute="bottom" id="y4D-Nq-JF2"/>
                         </constraints>
@@ -257,7 +239,6 @@
                         <outlet property="borderLineView" destination="5iu-Tl-W8q" id="XvP-rO-bfh"/>
                         <outlet property="campBackView" destination="ES5-34-1XR" id="Zc4-PE-Znp"/>
                         <outlet property="campLabel" destination="KPZ-2t-qco" id="3gU-7C-d7z"/>
-                        <outlet property="dismissButton" destination="KAF-2j-TFa" id="RNJ-i7-z4C"/>
                         <outlet property="exitButton" destination="11n-yi-jIh" id="RvT-Ab-NMD"/>
                         <outlet property="importantDatesButton" destination="27o-XL-YGH" id="Kbm-20-Sy5"/>
                         <outlet property="mapView" destination="lcw-fP-Iuy" id="Rjh-Vf-PhD"/>

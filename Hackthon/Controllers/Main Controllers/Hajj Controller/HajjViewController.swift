@@ -13,7 +13,6 @@ import Helper4Swift
 class HajjViewController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
-    @IBOutlet weak var dismissButton: UIButton!
     @IBOutlet weak var borderLineView: UIView!
     @IBOutlet weak var profileButton: UIButton!
     @IBOutlet weak var profileImage: UIImageView!
@@ -32,8 +31,26 @@ class HajjViewController: UIViewController {
     
     let locationManager = CLLocationManager()
     
+    fileprivate lazy var dismissButton: UIButton = {
+        let button = UIButton()
+        view.addSubview(button)
+        button.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        button.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -70).isActive = true
+        button.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 70).isActive = true
+        button.heightAnchor.constraint(equalToConstant: 110).isActive = true
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(dismissView), for: .touchUpInside)
+        button.backgroundColor = .clear
+        return button
+    }()
+    
+    @objc fileprivate func dismissView(){
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addSubview(dismissButton)
         mapEffect()
         setupAtFirst()
     }
@@ -51,17 +68,14 @@ class HajjViewController: UIViewController {
     }
      
     @IBAction func WhereAmIPreesed(_ sender: UIButton) {
-        Helper4Swift.shakePhone(style: .light)
         showMap()
     }
     
     @IBAction func importantDatesPressed(_ sender: UIButton) {
-        Helper4Swift.shakePhone(style: .light)
         showImaportentDates()
     }
     
     @IBAction func HajjHungerstationPressed(_ sender: UIButton) {
-        Helper4Swift.shakePhone(style: .light)
         openHungerstation()
     }
     
@@ -226,14 +240,7 @@ extension HajjViewController: MKMapViewDelegate {
             self.mapView.setRegion(region, animated: true)
         }
     }
-    
-//    func mapView(_ mapView: MKMapView, regionWillChangeAnimated animated: Bool) {
-//        backgrouncViewDOWN()
-//    }
-//
-//    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
-//        backgrouncViewUP()
-//    }
+  
 }
 
 extension HajjViewController: CLLocationManagerDelegate {
